@@ -1,0 +1,48 @@
+REGEDIT4
+
+
+
+; Register and Unregister DLLs and OCXs
+
+[HKEY_CLASSES_ROOT\.dll]
+
+@="dllfile"
+
+
+
+[HKEY_CLASSES_ROOT\.ocx]
+
+@="dllfile"
+
+
+
+[HKEY_CLASSES_ROOT\dllfile\shell\Register COM Server\command]
+
+@="regsvr32 \"%1\""
+
+
+
+[HKEY_CLASSES_ROOT\dllfile\shell\Unregister COM Server\command]
+
+@="regsvr32 /u \"%1\""
+
+
+
+; Register and Unregister EXEs
+
+[HKEY_CLASSES_ROOT\.exe]
+
+@="exefile"
+
+
+
+[HKEY_CLASSES_ROOT\exefile\shell\Register COM Server\command]
+
+@="\"%1\" /regserver"
+
+
+
+[HKEY_CLASSES_ROOT\exefile\shell\Unregister COM Server\command]
+
+@="\"%1\" /unregserver"
+
